@@ -88,7 +88,7 @@ For further information read all documentation available in `docs` folder.
 
 * [VMD Dowser plugin](http://www.ks.uiuc.edu/Research/vmd/plugins/dowser/) - Version 1.1
 
-* [Dowser](https://github.com/caraortizmah/dowser) - non-Official GitHub repository.
+* [Dowser](https://github.com/fidic-biomath/dowser) - non-Official GitHub repository.
 
 * [MOPAC 2016](http://openmopac.net/Download_MOPAC_Executable_Step2.html) - MOPAC page
 
