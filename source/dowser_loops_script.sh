@@ -43,10 +43,10 @@ do
 
   if [ $iter -eq 1 ]
   then
-    ${VMD} -dispdev text -e prepare_st2.tcl > output_"$iter".log
+    ${VMD} -dispdev text -e prepare_st2.tcl > output_"$iter".log 2>&-
     # vmd -dispdev text -e prepare_st2.tcl > output_"$iter".log #manual mode
   else
-    ${VMD} -dispdev text -e prepare_st2.tcl > output_"$iter".log
+    ${VMD} -dispdev text -e prepare_st2.tcl > output_"$iter".log 2>&-
     #vmd -dispdev text -e prepare_st2.tcl > output_"$iter".log #manual mode
   fi
 
