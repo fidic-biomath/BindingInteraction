@@ -20,7 +20,7 @@ fi
 
 #mopac16="/opt/mopac/MOPAC2016.exe" #Path of MOPAC program - manual mode
 
-for i in `ls mutation_*/ | grep "/" | cut -d':' -f1` #for all folders
+for i in `ls -d mutation_*/ | grep "/" | cut -d':' -f1` #for all folders
 do
 
   j="$(echo "${i#*_}" | cut -d'/' -f1)" # cutting in the '_' and returning the second part of the name, in that case the number of the residue
@@ -38,7 +38,7 @@ cp "$tag"_noW.pdb tobe_charged/
 cp "$tag"_noW.arc tobe_charged/
 cp res_charges.pdb tobe_charged/
 
-for i in `ls mutation_*/ | grep "/" | cut -d':' -f1` # for all folders
+for i in `ls -d mutation_*/ | grep "/" | cut -d':' -f1` # for all folders
 do
 
   j="$(echo "${i#*_}" | cut -d'/' -f1)" # for all .mop files created before
