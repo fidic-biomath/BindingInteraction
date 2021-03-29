@@ -36,7 +36,7 @@ os.chdir("$dir")
 
 EOF
 
-let linen=$(grep -n "*** Begin" "$listm" | cut -d ":" -f1) #detecting the line number of the search
+let linen=$(grep -n "Begin" "$listm" | cut -d ":" -f1) #detecting the line number of the search
 let linen=$linen+4 # line position of the features
 
 #llist=$(awk -v x=$linen 'NF=="4" && NR>=x {printf "%s%d\n", toupper($3),$2}' "$listm") #specific search using as filter NF and NR and returning 2ns and 3rd columns
