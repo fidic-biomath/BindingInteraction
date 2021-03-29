@@ -295,7 +295,7 @@ fi
 
 cd final_pdbs
 
-let num2=$(ls *.pdb | wc -l)
+let num2=$(expr $(ls *.pdb | wc -l) / 3)
 
 if [ "${num}" -eq "${num2}" ]; then
   echo -e "Stage 3: Overal substituted and charged PDB structures found...           \e[1;32m passed \e[0m"
