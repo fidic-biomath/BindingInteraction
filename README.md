@@ -1,16 +1,10 @@
 # BindingInteraction
 
 ```
-    Date: 04/18/18
-    Author: Carlos Andrés Ortiz Mahecha
-
+ Author: FIDIC Biomathematics Group
+ Citation: Ortiz-Mahecha CA, Agudelo WA, Patarroyo MA, Patarroyo ME and Suarez CF. MHCBI: a pipeline for calculating peptide-protein binding energy using semi-empirical quantum mechanical methods with explicit/implicit solvent models. submitted
+ Contact: fidic.biomath@gmail.com, caraortizmah@gmail.com
 ```
-[comment]: <> (****)
-[comment]: <> (Modification: 12/02/20)
-[comment]: <> (comment:)
-[comment]: <> (12/02/20 - Substantial changes in the installation and new kind of test based on MHC I results)
-[comment]: <> (Old install version were removed while is fixed)
-[comment]: <> (****)
 
 `MHC Binding Interaction (MHCBI)` is a pipeline software that manages and uses other programmes to perform some tasks related to calculating protein peptide receptor-ligand binding energy in the field of computational chemistry.
 The MHCBI has been used with receptor-ligand complexes, such as major histocompatibility complex (MHC) proteins.
@@ -74,12 +68,6 @@ Follow the instructions which appear while executing every step:
 ## Notepadding
 
 For further information read all documentation available in `docs` folder.
-
-
-[comment]: <> (2nd step: Configure the installation program and scratch path $ ./configure -p 'program_path' -s 'scratch_path')
-[comment]: <> (3rd step: Prepare folders and other bash programs before installing the `MHCBI` $ make init)
-[comment]: <> (4th step: Install BindingInteraction    $ sudo python setup.py install)
-
 
 ### Requirements - Linux text processing tool
 
