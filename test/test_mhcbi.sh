@@ -111,7 +111,7 @@ cp source/run_mhcbi.sh .
 ####################################
 cp ../../listm_test-tmp mutations/listm.log
 ###################################
-PH=7
+PH=7  # pH value to estimate the protonation state in script_fishing_pka.sh
 ./run_mhcbi.sh ${PH}
 ####################################
 
