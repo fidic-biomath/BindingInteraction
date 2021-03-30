@@ -1,9 +1,13 @@
 #!/bin/bash
-#Author: Carlos Andres Ortiz Mahecha
-#caraortizmah@gmail.com
+
+# Author: FIDIC Biomathematics Group
+# Citation: Ortiz-Mahecha CA, Agudelo WA, Patarroyo MA, Patarroyo ME and Suarez CF. MHCBI: a pipeline for calculating peptide-protein binding energy using     semi-empirical quantum mechanical methods with explicit/implicit solvent models. submitted
+# Contact: fidic.biomath@gmail.com, caraortizmah@gmail.com
+
 
 FILE=paths.out
 FILE2=pro_paths.out
+PH=$1
 
 if [ -f "$FILE" ]; then
   MHCBI_PATH=$(grep "1 " ${FILE} | cut -d':' -f2)
@@ -62,7 +66,7 @@ cd ../calculations
 
 chmod +x org_calc.sh
 
-./org_calc.sh ${PKA_PATH} ${MOPAC_PATH}
+./org_calc.sh ${PKA_PATH} ${MOPAC_PATH} ${PH}
 
 echo "****** MHCBI says: ******"
 echo "  Stage 3 finished..."

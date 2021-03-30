@@ -4,6 +4,7 @@
 
 FILE=paths.out
 FILE2=pro_paths.out
+PH=$1
 
 if [ -f "$FILE" ]; then
   MHCBI_PATH=$(grep "1 " ${FILE} | cut -d':' -f2)
@@ -91,7 +92,7 @@ do
 
       chmod +x org_calc.sh
 
-      ./org_calc.sh ${PKA_PATH} ${MOPAC_PATH}
+      ./org_calc.sh ${PKA_PATH} ${MOPAC_PATH} ${PH}
 
       cd ..
 

@@ -1,10 +1,10 @@
 #!/bin/bash
 
-#Author: Carlos Andres Ortiz Mahecha
-#caraortizmah@gmail.com
-#This program executes propka3.1 in all pdb from "tobe_charged" folder.
+#  Author: FIDIC Biomathematics Group
+#  Citation: Ortiz-Mahecha CA, Agudelo WA, Patarroyo MA, Patarroyo ME and Suarez CF. MHCBI: a pipeline for calculating peptide-protein binding energy using     semi-empirical quantum mechanical methods with explicit/implicit solvent models. submitted
+#  Contact: fidic.biomath@gmail.com, caraortizmah@gmail.com
 
-# propka="/home/caom/bin/propka31" - manual mode
+#This program executes propka3.1 in all pdb from "tobe_charged" folder.
 
 PROPKA="$1"
 
@@ -21,16 +21,13 @@ cd tobe_charged/
 mv res_charges.pdb res_charges.aux-pdb
 
 for i in `ls *.pdb`
-#for i in `ls 1kpv4_A12_2A.pdb` optional for specific pdb file
 do
    j="$(echo "$i" | cut -d'.' -f1)"
    mkdir -p $j
    mv $i $j/
    cd $j
    ${PROPKA} $i
-   #$propka $i # manual mode
    ${PROPKA} -d $i
-   #$propka -d $i # manual mode
    echo "execution of propka3.1 over $i"
    cd ..
 done

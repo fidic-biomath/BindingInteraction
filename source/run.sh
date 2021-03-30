@@ -1,6 +1,8 @@
 #!/bin/bash
-#Author: Carlos Andres Ortiz Mahecha
-#caraortizmah@gmail.com
+
+# Author: FIDIC Biomathematics Group
+# Citation: Ortiz-Mahecha CA, Agudelo WA, Patarroyo MA, Patarroyo ME and Suarez CF. MHCBI: a pipeline for calculating peptide-protei    n binding energy using semi-empirical quantum mechanical methods with explicit/implicit solvent models. submitted
+# Contact: fidic.biomath@gmail.com, caraortizmah@gmail.com
 
 FILE=paths.out
 
@@ -59,8 +61,9 @@ do
   else
     echo "Please enter again your answer - yes (y) or no (n)"
   fi
-
 done
+
+PH=7
 
 let input=0
 
@@ -82,7 +85,7 @@ do
       cd ${WORK_PATH}/${WORK_NAME}/
       cp source/run_mhcbi.sh .
       chmod +x run_mhcbi.sh
-      ./run_mhcbi.sh
+      ./run_mhcbi.sh ${PH}
       echo "...going to the menu..."
       rm -f run_mhcbi.sh
       ;;
@@ -92,7 +95,7 @@ do
       cd ${WORK_PATH}/${WORK_NAME}/
       cp source/run_mhcbi_step.sh .
       chmod +x run_mhcbi_step.sh
-      ./run_mhcbi_step.sh
+      ./run_mhcbi_step.sh ${PH}
       echo "...going to the menu..."
       rm -f run_mhcbi_step.sh
       ;;
