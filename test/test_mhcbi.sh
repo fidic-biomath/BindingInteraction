@@ -1,6 +1,8 @@
 #!/bin/bash
-#Author: Carlos Andres Ortiz Mahecha
-#caraortizmah@gmail.com
+
+# Author: FIDIC Biomathematics Group
+# Citation: Ortiz-Mahecha CA, Agudelo WA, Patarroyo MA, Patarroyo ME and Suarez CF. MHCBI: a pipeline for calculating peptide-protein binding energy using     semi-empirical quantum mechanical methods with explicit/implicit solvent models. submitted
+# Contact: fidic.biomath@gmail.com, caraortizmah@gmail.com
 
 echo "****Warning****"
 echo "  "
@@ -22,9 +24,8 @@ do
   else
     echo "Please enter again your answer - yes (y) or no (n)"
   fi
-
 done
-
+####################################
 #cleaning previous test
 
 echo "cleaning previous test"
@@ -32,10 +33,9 @@ rm -f *.out
 rm -f *.log
 rm -f conf.sh
 rm -rf workdir_test
-
+####################################
 while :
 do
-
   echo "Please select an option"
   echo "1. Short test"
   echo "2. Straight test"
@@ -62,9 +62,8 @@ do
     echo "Sorry, you need to choose an option (1, 2 or 3)"
     exit 1
   fi
-
 done
-
+##################################
 PDB_PATH=$PWD
 WORK_PATH=$(echo "${PWD}/workdir_test")
 
@@ -78,7 +77,7 @@ cat << EOF > paths.out
 5 :$WORK_NAME
 ***
 EOF
-
+##################################
 mkdir -p workdir_test
 cp ../pro_paths.log .
 cp ../conf.sh .
@@ -95,7 +94,6 @@ chmod +x *.sh #giving permissions
 chmod +x *.tcl
 cd ../
 cp ${PDB_PATH}/${PDB_NAME} .
-#cp ../../paths.out .
 cp ../../pro_paths.out .
 mkdir -p optimizations
 mkdir -p mutations
@@ -108,17 +106,22 @@ cp source/organizer.sh .
 cp source/tester.sh .
 cp source/run_mhcbi.sh .
 
+####################################
 ./organizer.sh
+####################################
 cp ../../listm_test-tmp mutations/listm.log
-./run_mhcbi.sh
+###################################
+PH=7
+./run_mhcbi.sh ${PH}
+####################################
 
 echo " "
 echo "****Checking test..."
 echo " "
 ./tester.sh
-
 echo "    "
 
+#########################################
 echo "For FMO test is not necessary to have installed GUI Facio"
 echo "In test folder there are two aditional folders containing FMO input GAMESS (si_short and si_straight) aiming to facilitate a complete test"
 
