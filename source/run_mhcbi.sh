@@ -7,8 +7,8 @@
 
 FILE=paths.out
 FILE2=pro_paths.out
-PH=$1
-
+PH=$1  # pH value to estimate the protonation state
+###############################################################################
 if [ -f "$FILE" ]; then
   MHCBI_PATH=$(grep "1 " ${FILE} | cut -d':' -f2)
   PDB_PATH=$(grep "2 " ${FILE} | cut -d':' -f2)
@@ -33,7 +33,7 @@ else
   echo "Configure the MHCBI pipeline executig setup.sh and select option 3)"
   exit 1
 fi
-
+##########################################################################
 cd optimizations
 
 arg1=$(echo "${WORK_PATH}/${WORK_NAME}/optimizations")
@@ -47,7 +47,7 @@ cp output/*.pdb ${WORK_PATH}/${WORK_NAME}/mutations/
 
 echo "****** MHCBI says: ******"
 echo "  Stage 1 finished..."
-
+#########################################################################
 cd ../mutations
 
 arg2=$(echo "${WORK_PATH}/${WORK_NAME}/mutations")
@@ -61,7 +61,7 @@ cp -r tobe_charged ../calculations/
 
 echo "****** MHCBI says: ******"
 echo "  Stage 2 finished..."
-
+##########################################################################
 cd ../calculations
 
 chmod +x org_calc.sh
@@ -70,9 +70,7 @@ chmod +x org_calc.sh
 
 echo "****** MHCBI says: ******"
 echo "  Stage 3 finished..."
-
+###########################################################################
 cd ../
 cp source/tester.sh .
 ./tester.sh
-
-
