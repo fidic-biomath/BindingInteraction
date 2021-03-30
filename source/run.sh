@@ -63,7 +63,17 @@ do
   fi
 done
 
-PH=7
+count=0
+while [ $count -eq 0 ]
+do
+  read -p "What pH value are you going to use to estimate the protonation state? (e.g.: 7.0): " PH
+  re='^[0-9]+([.][0-9]+)?$'
+  if ! [[ ${PH} =~ $re ]] ; then
+    echo "error: Not a number" >&2
+  else
+    echo ${PH}; count=1
+  fi
+done
 
 let input=0
 
