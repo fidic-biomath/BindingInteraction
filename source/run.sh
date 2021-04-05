@@ -27,7 +27,7 @@ do
     count=1
   elif [ "$answer" == "no" ] || [ "$answer" == "n" ]; then
     echo "The MHCBI will open vim editor for writing the mutation list from the new proyect."
-    echo "Exit the pipelie if you want to write the mutation list with an editor of your preference"
+    echo "Exit the pipeline if you want to write the mutation list with an editor of your preference"
     echo " "
 
     count1=0
@@ -53,7 +53,7 @@ do
       else
         echo "Please enter again your answer - continue (c) or exit (x)"
       fi
-
+# Introducir una prueba de errores del archivo mutations/listm.log
     done
 
     echo " bye..."
@@ -63,6 +63,11 @@ do
   fi
 done
 
+###########################################################
+# Test if the listm.log file has mutations 
+MUT_NUM=`awk 'BEGIN{i=0} $1!="#"{i++} END{print i}' mutations/listm.log`
+############################################################
+
 count=0
 while [ $count -eq 0 ]
 do
@@ -71,7 +76,10 @@ do
   if ! [[ ${PH} =~ $re ]] ; then
     echo "error: Not a number" >&2
   else
-    echo ${PH}; count=1
+    read -p "Is the pH value you are going to use to estimate the protonation state  ${PH}  ? yes (y) or no (n): " CORRECT
+    if [ "$CORRECT" == "y" ]; then
+      count=1
+    fi
   fi
 done
 
@@ -95,7 +103,7 @@ do
       cd ${WORK_PATH}/${WORK_NAME}/
       cp source/run_mhcbi.sh .
       chmod +x run_mhcbi.sh
-      ./run_mhcbi.sh ${PH}
+      ./run_mhcbi.sh ${PH} ${MUT_NUM}
       echo "...going to the menu..."
       rm -f run_mhcbi.sh
       ;;
@@ -105,7 +113,7 @@ do
       cd ${WORK_PATH}/${WORK_NAME}/
       cp source/run_mhcbi_step.sh .
       chmod +x run_mhcbi_step.sh
-      ./run_mhcbi_step.sh ${PH}
+      ./run_mhcbi_step.sh ${PH} ${MUT_NUM}
       echo "...going to the menu..."
       rm -f run_mhcbi_step.sh
       ;;

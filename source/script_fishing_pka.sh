@@ -4,15 +4,20 @@
 # Citation: Ortiz-Mahecha CA, Agudelo WA, Patarroyo MA, Patarroyo ME and Suarez CF. MHCBI: a pipeline for calculating pepti    de-protein binding energy using semi-empirical quantum mechanical methods with explicit/implicit solvent models. submitted
 # Contact: fidic.biomath@gmail.com, caraortizmah@gmail.com
 
+# script_fishing_pka.sh
+# This script makes ....
+######################################################################
+
 PH=$1
 
 cd tobe_charged/
-
-for i in `ls */` #in each folder
+echo "Running ./script_fishing_pka.sh script in $PWD ... "
+#for i in `ls */` #in each folder
+for i in `ls -d */` #in each folder
 do
   j="$(echo "$i" | cut -d':' -f1)"
   if [ -d "$(echo "$i" | cut -d':' -f1)" ]; then #if folder $i exists,  -d checks whether $jj directory exists or not
-    echo "$j"
+    #echo "$j"
     cd "$j"
 
     cp ../residues_charges . #residues_charges contains all information about what the charged residues are
@@ -48,4 +53,3 @@ do
   fi
 done
 cd ..
-echo "end"

@@ -1,21 +1,21 @@
 #!/bin/bash
 
 # Author: FIDIC Biomathematics Group
-# Citation: Ortiz-Mahecha CA, Agudelo WA, Patarroyo MA, Patarroyo ME and Suarez CF. MHCBI: a pipeline for calculating peptide-protein binding energy using     semi-empirical quantum mechanical methods with explicit/implicit solvent models. submitted
+# Citation: Ortiz-Mahecha CA, Agudelo WA, Patarroyo MA, Patarroyo ME and Suarez CF. MHCBI: a pipeline for calculating peptide-protein binding energy using semi-empirical quantum mechanical methods with explicit/implicit solvent models. submitted
 # Contact: fidic.biomath@gmail.com, caraortizmah@gmail.com
 
 echo "****Warning****"
-echo "  "
+echo 
 
 count=0
 while [ $count -eq 0 ]
 do
-  read -p "Did you complete all of the requirements in the setup.sh first step? If you really fulfil the requirements type (Yes(Y/y), otherwise (No(N/n)): " answer
+  read -p "Did you complete all of the requirements in the setup.sh first step? If you really meet the requirements type (Yes(Y/y), otherwise (No(N/n)): " answer
   answer=${answer,,}
 
   if [ "$answer" == "yes" ] || [ "$answer" == "y" ]; then
     echo " *** "
-    echo " "
+    echo
     count=1
   elif [ "$answer" == "no" ] || [ "$answer" == "n" ]; then
     echo "Please make sure that you have installed all of required programs prior to run the test"
@@ -40,7 +40,7 @@ do
   echo "1. Short test"
   echo "2. Straight test"
   echo "3. End test"
-  echo " "
+  echo
   read answer
 
   if [ -z "${answer}" ]; then
@@ -107,19 +107,22 @@ cp source/tester.sh .
 cp source/run_mhcbi.sh .
 
 ####################################
+#
 ./organizer.sh
 ####################################
 cp ../../listm_test-tmp mutations/listm.log
+# Test if the listm.log file has mutations 
+MUT_NUM=`awk 'BEGIN{i=0} $1!="#"{i++} END{print i}' mutations/listm.log`
 ###################################
 PH=7  # pH value to estimate the protonation state in script_fishing_pka.sh
-./run_mhcbi.sh ${PH}
+./run_mhcbi.sh ${PH} ${MUT_NUM}
 ####################################
 
-echo " "
-echo "****Checking test..."
-echo " "
-./tester.sh
-echo "    "
+#echo " "
+#echo "****Checking test..."
+#echo " "
+#./tester.sh
+#echo "    "
 
 #########################################
 echo "For FMO test is not necessary to have installed GUI Facio"
@@ -163,18 +166,23 @@ fi
 
 cp source/fmoexemaker.sh .
 chmod +x fmoexemaker.sh
-
+##########################################################
+#
 ./fmoexemaker.sh "${GAMESS_PATH}"
+#########################################################
 rm -f fmoexemaker.sh
 
 cd ${WORK_PATH}/${WORK_NAME}/
 cp source/run_mhcbifmo.sh .
 mv exec_fmo.sh fmo-calculations/fmo_molecules/
 chmod +x run_mhcbifmo.sh
+##########################################
+#
 ./run_mhcbifmo.sh
+##########################################
 rm -f run_mhcbifmo.sh
 
 echo "**** Bear in mind: "
 echo "Run the pipeline typing ./pre-run.sh in this path: " ${WORK_PATH}/${WORK_NAME}/
 echo "*** "
-echo "    "
+echo

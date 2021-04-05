@@ -9,8 +9,16 @@ VMD="$5"
 BABEL="$6"
 MOPAC="$7"
 
+echo "Running ./org_all.sh script in $PWD ...."
+##########################################################################################################
 name_f="$(echo "$NAME_PDB" | cut -d'.' -f1)"
 
+###########################################################################
+#
 ./part1.sh $ARG $DIR_PDB $NAME_PDB $WORK_DIR $VMD $BABEL > $name_f.log
+############################################################################################################
+#
 ./part2.sh $ARG $NAME_PDB $WORK_DIR $MOPAC >> $name_f.log # $DIR_PDB $NAME_PDB $WORK_DIR >> $name_f.log
+#############################################################################################################
+#
 ./part3.sh $ARG $NAME_PDB $WORK_DIR $MOPAC >> $name_f.log # $DIR_PDB $NAME_PDB $WORK_DIR >> $name_f.log

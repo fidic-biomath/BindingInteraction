@@ -1,30 +1,30 @@
 #!/bin/bash
 
-#Author: Carlos Andres Ortiz Mahecha
-#caraortizmah@gmail.com
-#This program creates a chimera script for python. The new script can change residues froma pdb input.
+# Author: FIDIC Biomathematics Group
+# Citation: Ortiz-Mahecha CA, Agudelo WA, Patarroyo MA, Patarroyo ME and Suarez CF. MHCBI: a pipeline for calculating peptide-protein binding energy using semi-empirical quantum mechanical methods with explicit/implicit solvent models. submitted
+# Contact: fidic.biomath@gmail.com, caraortizmah@gmail.com
 
 dir="$1"
 name="$2"
 listm="$3"
-
+###########################################################################
 if [ -z "$dir" ] || [ -z "$name" ] || [ -z "$listm" ]
 then
   echo "It lacks one or several arguments to execute this script"
   echo "For instance: ./mutmaker.sh path, name_pdb and list_mutations"
   exit 1
 else
+  echo "Running ./mutmaker.sh script in $PWD ..."
   echo "Creating a chimera script "
 fi
-
-#tag="$(echo "$name" | cut -d'.' -f1)"
-tag="$(awk -F '_noW'  '{print $1}'  <<<  "$name")"
+###########################################################################
 
 cat << EOF > script_chimera_mut.py
-#Author: Carlos Andres Ortiz Mahecha
-#caraortizmah@gmail.com
-#This python program calls some routines in chimera to creates the substitutions using Dunbrack library
+# Author: FIDIC Biomathematics Group
+# Citation: Ortiz-Mahecha CA, Agudelo WA, Patarroyo MA, Patarroyo ME and Suarez CF. MHCBI: a pipeline for calculating peptide-protein binding energy using semi-empirical quantum mechanical methods with explicit/implicit solvent models. submitted
+# Contact: fidic.biomath@gmail.com, caraortizmah@gmail.com
 
+#This python program calls some routines in chimera to creates the substitutions using Dunbrack library
 
 import os, sys
 from chimera import runCommand as rc # use 'rc' as shorthand for runCommand
@@ -33,15 +33,15 @@ from chimera import replyobj # for emitting status messages
 # change to folder with data files
 os.chdir("$dir")
 
-
 EOF
 
 let linen=$(grep -n "Begin" "$listm" | cut -d ":" -f1) #detecting the line number of the search
 let linen=$linen+4 # line position of the features
 
-#llist=$(awk -v x=$linen 'NF=="4" && NR>=x {printf "%s%d\n", toupper($3),$2}' "$listm") #specific search using as filter NF and NR and returning 2ns and 3rd columns
 llist_name=$(awk -v x=$linen 'NF=="4" && NR>=x {print $1}' "$listm") #specific search using as filter NF and NR and returning first column
 listu=$(echo "$llist_name" | sort -u) #removing duplicates
+
+tag="$(awk -F '_noW'  '{print $1}'  <<<  "$name")"
 
 for i in $listu
 do

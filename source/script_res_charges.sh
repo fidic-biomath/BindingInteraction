@@ -1,8 +1,8 @@
-  #!/bin/bash
+#!/bin/bash
 
-#Author: Carlos Andres Ortiz Mahecha
-#caraortizmah@gmail.com
-#This program creates the format of the residues to be charged
+# Author: FIDIC Biomathematics Group
+# Citation: Ortiz-Mahecha CA, Agudelo WA, Patarroyo MA, Patarroyo ME and Suarez CF. MHCBI: a pipeline for calculating pept    ide-protein binding energy using semi-empirical quantum mechanical methods with explicit/implicit solvent models. submitted
+# Contact: fidic.biomath@gmail.com, caraortizmah@gmail.com
 
 cd tobe_charged/
 

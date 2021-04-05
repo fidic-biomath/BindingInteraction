@@ -1,7 +1,6 @@
 #!/bin/bash
 #Author: FIDIC Biomathematics Group
-#Citation: Ortiz-Mahecha CA, Agudelo WA, Patarroyo MA, Patarroyo ME and Suarez CF. MHCBI: a pipeline for calculating peptide-protein binding energyusing semi-empirical quantum mechanical methods with explicit/implicit solvent models.
-# Journal:  
+#Citation: Ortiz-Mahecha CA, Agudelo WA, Patarroyo MA, Patarroyo ME and Suarez CF. MHCBI: a pipeline for calculating peptide-protein binding energyusing semi-empirical quantum mechanical methods with explicit/implicit solvent models. Submitted.
 # Contact: fidic.biomath@gmail.com, caraortizmah@gmail.com
 
 FILE=paths.out

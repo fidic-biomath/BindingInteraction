@@ -7,7 +7,8 @@
 
 FILE=paths.out
 FILE2=pro_paths.out
-PH=$1  # pH value to estimate the protonation state
+PH=$1  # pH value to estimate the protonation state in script_fishing_pka.sh
+MUT_NUM=$2 #   Number of substitutions in mutations/listm.log file
 ###############################################################################
 if [ -f "$FILE" ]; then
   MHCBI_PATH=$(grep "1 " ${FILE} | cut -d':' -f2)
@@ -48,29 +49,46 @@ cp output/*.pdb ${WORK_PATH}/${WORK_NAME}/mutations/
 echo "****** MHCBI says: ******"
 echo "  Stage 1 finished..."
 #########################################################################
+echo "***Running Stage 2***"
+echo
+echo "You have ${MUT_NUM} amino acid substitutions in the ligand..."
+
 cd ../mutations
 
 arg2=$(echo "${WORK_PATH}/${WORK_NAME}/mutations")
 name=$(awk -F '.pdb'  '{print $1}'  <<<  "${PDB_NAME}")
 
 chmod +x org_mut.sh
-
-./org_mut.sh ${arg2} ${name}_noW.pdb listm.log ${CHIMERA_PATH} ${MOPAC_PATH}
-
+########################################################################
+#
+./org_mut.sh ${arg2} ${name}_noW.pdb listm.log ${CHIMERA_PATH} ${MOPAC_PATH} ${MUT_NUM}
+#######################################################################
 cp -r tobe_charged ../calculations/
 
 echo "****** MHCBI says: ******"
 echo "  Stage 2 finished..."
 ##########################################################################
+echo
+echo "***Running Stage 3***"
+echo
 cd ../calculations
 
 chmod +x org_calc.sh
-
+#########################################################
+#
 ./org_calc.sh ${PKA_PATH} ${MOPAC_PATH} ${PH}
-
+########################################################
 echo "****** MHCBI says: ******"
 echo "  Stage 3 finished..."
+echo
 ###########################################################################
 cd ../
 cp source/tester.sh .
+echo
+echo "****Checking test..."
+echo
+##########################################
+#
 ./tester.sh
+##########################################
+echo
