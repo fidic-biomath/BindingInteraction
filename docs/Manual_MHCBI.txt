@@ -1,5 +1,5 @@
-#######              The MHCBI BindingInteraction               #########
-#######  https://github.com/caraortizmah/BindingInteraction.git #########
+#######              The MHCBI BindingInteraction                #########
+#######  https://github.com/fidic-biomath/BindingInteraction.git #########
 
 *********************************************
 
