@@ -31,7 +31,7 @@ This pipeline is an open source tool (GPL-3.0 Licence) and is intended to be ada
 
 To get the git version type
 
-    $ git clone https://github.com/caraortizmah/bindinginteraction.git
+    $ git clone https://github.com/fidic-biomath/BindingInteraction.git
 
 ### Installation
 
