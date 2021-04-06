@@ -2,10 +2,10 @@
 
 #*************************************
 # The MCH Binding Interaction (MHCBI) pipeline
-# @author Carlos Andres Ortiz-Mahecha
-#  (email: caraortizmah@gmail.com)
-#  (email: caraortizmah@unal.edu.co)
-# @comment:
+# Author: FIDIC Biomathematics Group
+# Citation: Ortiz-Mahecha CA, Agudelo WA, Patarroyo MA, Patarroyo ME and Suarez CF. MHCBI: a pipeline for calculating peptide-protein binding energy using semi-empirical quantum mechanical methods with explicit/implicit solvent models. submitted
+# Contact: fidic.biomath@gmail.com, caraortizmah@gmail.com
+
 #  This is the configuration pipeline through Shell Script, a straightforward to use it.
 #*************************************
 
