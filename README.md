@@ -102,7 +102,7 @@ For further information read all documentation available in `docs` folder.
 
 * [Facio FMOutil](http://zzzfelis.sakura.ne.jp/) - Facio page
 
-### The MHC BindingInteraction pipeline Manual
+### The MHC Binding Interaction pipeline Manual
 MHC BindingInteraction wiki (https://github.com/fidic-biomath/BindingInteraction/wiki)
 
 ### Additional handling
