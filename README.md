@@ -1,4 +1,4 @@
-# BindingInteraction
+# Binding Interaction
 
 ```
  Author: FIDIC Biomathematics Group
@@ -102,6 +102,8 @@ For further information read all documentation available in `docs` folder.
 
 * [Facio FMOutil](http://zzzfelis.sakura.ne.jp/) - Facio page
 
+### The MHC Binding Interaction pipeline Manual
+MHC BindingInteraction wiki (https://github.com/fidic-biomath/BindingInteraction/wiki)
 
 ### Additional handling
 
@@ -113,4 +115,7 @@ This virtual machine has an Ubuntu 20.04 installation having all the requirement
 
 Please cite the following reference in publications:
 
+*   Ortiz-Mahecha, Carlos A., Agudelo, William A., Patarroyo, Manuel A., Patarroyo, Manuel E. and Suárez, Carlos F. ["MHCBI: a pipeline for calculating peptide-MHC binding energy using semi-empirical quantum mechanical methods with explicit/implicit solvent models."](https://doi.org/10.1093/bib/bbab171) Briefings in Bioinformatics, 2021, 1-8. DOI: 10.1093/bib/bbab171
+
 *   Ortiz-Mahecha, Carlos A., Bohórquez, Hugo J., Agudelo, William A., Patarroyo, Manuel A., Patarroyo, Manuel E. and Suárez, Carlos F. ["Assessing peptide binding to MHC II: An accurate semi-empirical quantum mechanics-based proposal."](https://doi.org/10.1021/acs.jcim.9b00672) Journal of Chemical Information and Modeling, (2019). - DOI: 10.1021/acs.jcim.9b00672
+
