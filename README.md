@@ -1,14 +1,12 @@
 # Binding Interaction
 
-```
- Author: FIDIC Biomathematics Group
- Citation: Ortiz-Mahecha CA, Agudelo WA, Patarroyo MA, Patarroyo ME and Suarez CF. MHCBI: a pipeline for calculating peptide-protein binding energy using semi-empirical quantum mechanical methods with explicit/implicit solvent models. submitted
- Contact: fidic.biomath@gmail.com, caraortizmah@gmail.com
-```
-
 `MHC Binding Interaction (MHCBI)` is a pipeline software that manages and uses other programmes to perform some tasks related to calculating protein peptide receptor-ligand binding energy in the field of computational chemistry.
-The MHCBI has been used with receptor-ligand complexes, such as major histocompatibility complex (MHC) proteins.
+
+The aim of the `MHCBI` pipeline is to automate tasks regarding binding energy methodology for major histocompatibility complex (MHC) systems requiring several replications for estimating receptor-ligand interactions.
+
 It can therefore be extrapolated to other non-covalent interaction systems (i.e. MHC-like structures).
+
+This pipeline is an open source tool (GPL-3.0 Licence) and is intended to be adapted, modified or used according to user needs.
 
 The `MHCBI` uses some programmes and does several tasks as detailed below:
 
@@ -17,15 +15,12 @@ The `MHCBI` uses some programmes and does several tasks as detailed below:
         such as optimisation geometries and single point energies, as in this methodology.
      3. Dunbrack library on graphical interface Chimera software for substituting residues for others selected by the user.
      4. PROPKA 3.1 for assigning charges to a protein structure.
-     5. GAMESS software for calculating binding energy using the Fragment Molecular Orbital method (FMO) at SQM DFTB3.
-
-Molecules must be fragmented prior to single point energy calculation, when the `MHCBI` uses GAMESS software. Such fragmentation is performed by a graphical user interface programme known as Facio; however, Facio is not controlled by `MHCBI` in script mode due to this program having a non-open-source licence.
+     5. GAMESS software for calculating binding energy using the Fragment Molecular Orbital method (FMO) at SQM DFTB3. Molecules must be fragmented prior to single point energy calculation, when the `MHCBI` uses GAMESS software. Such fragmentation is performed by a graphical user interface programme known as Facio; however, Facio is not controlled by `MHCBI` in script mode due to this program having a non-open-source licence.
 
 
 ## MHCBI 2.0.0
 
-The aim of the `MHCBI` pipeline is to automate tasks regarding binding energy methodology for MHC-like systems requiring several replications for estimating receptor-ligand interactions.
-This pipeline is an open source tool (GPL-3.0 Licence) and is intended to be adapted, modified or used according to user needs.
+
 
 ### Download
 
