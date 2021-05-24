@@ -99,7 +99,7 @@ the MHCBI asks about location when you are going to install the pipeline. If ans
 
 
 ## Running the MHC Binding Interaction pipeline
-See MHC BindingInteraction wiki (https://github.com/fidic-biomath/BindingInteraction/wiki)
+See [MHC BindingInteraction manual](https://github.com/fidic-biomath/BindingInteraction/wiki).
 
 ## Additional handling
 
