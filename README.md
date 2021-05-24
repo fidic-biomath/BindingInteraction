@@ -27,7 +27,7 @@ The `MHCBI` pipeline is mostly written in Shell script and includes Python and T
 
 ### 1st step: You must install the following programmes before configuring the pipeline:
 
-#### Requirements - Linux text processing tool
+#### Requirements - Linux text processing and development tools (see more detail in wiki (https://github.com/fidic-biomath/BindingInteraction/wiki)
 
 * grep
 * cut
@@ -35,6 +35,9 @@ The `MHCBI` pipeline is mostly written in Shell script and includes Python and T
 * gawk
 * sed
 * vim
+* build-essential
+* gfortran
+* git
 
 #### Requirements - Specialized softwares
 
