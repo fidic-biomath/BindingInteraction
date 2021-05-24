@@ -41,22 +41,22 @@ The `MHCBI` pipeline is mostly written in Shell script and includes Python and T
 
 #### Requirements - Specialized softwares
 
-* [Open Babel 2.3.1](https://openbabel.org/docs/dev/Installation/install.html) or [2.4.0](https://sourceforge.net/projects/openbabel/files/openbabel/2.4.0/) - Open Babel
+* [Open Babel 2.3.1](https://openbabel.org/docs/dev/Installation/install.html) or [2.4.0](https://sourceforge.net/projects/openbabel/files/openbabel/2.4.0/).
 
-* [Python 2.7 or higher](https://www.python.org/downloads/) - Python page
+* [Python 2.7 or higher](https://www.python.org/downloads/).
 
-* [VMD version 1.9.1 (February 1, 2012) or higher](https://www.ks.uiuc.edu/Research/vmd/) - VMD page
+* [VMD version 1.9.1 (February 1, 2012) or higher](https://www.ks.uiuc.edu/Research/vmd/).
 
 * [VMD Dowser plugin](http://www.ks.uiuc.edu/Research/vmd/plugins/dowser/) - Version 1.1
 
 * [Dowser](https://github.com/fidic-biomath/dowser) - non-Official GitHub repository.
 
-* [MOPAC 2016](http://openmopac.net/Download_MOPAC_Executable_Step2.html) - MOPAC page
+* [MOPAC 2016](http://openmopac.net/Download_MOPAC_Executable_Step2.html).
 
-* [Chimera](https://www.cgl.ucsf.edu/chimera/download.html) - Chimera page
+* [Chimera](https://www.cgl.ucsf.edu/chimera/download.html).
 
-* [PROPKA-3.1](https://github.com/jensengroup/propka-3.1.git) - PROPKA-3.1 GitHub
-
+* [PROPKA-3.1](https://github.com/jensengroup/propka-3.1.git).
+*
 #### FOR DFTB-FMO CALCULATIONS:
 
 * [GAMESS](https://www.msg.chem.iastate.edu/GAMESS/download/register/) - Gordon Group page
