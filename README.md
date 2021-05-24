@@ -21,18 +21,13 @@ The `MHCBI` uses some programmes and does several tasks as detailed below:
         Such fragmentation is performed by a graphical user interface programme known as Facio; 
         however, Facio is not controlled by `MHCBI` in script mode due to this program having a non-open-source licence.
 
-
-## MHCBI 2.0.0
-
-
-
-### Download
+## Download
 
 To get the git version type
 
     $ git clone https://github.com/fidic-biomath/BindingInteraction.git
 
-### Installation
+## Installation
 
 The `MHCBI` pipeline is mostly written in Shell script and includes Python and Tcl languages for managing programme operations in graphical interface software, such as Dowser in VMD and Dunbrack’s library in Chimera.
 Follow the steps below for installing and running the `MHCBI` pipeline:
@@ -64,11 +59,11 @@ Follow the instructions which appear while executing every step:
     2. Configure folders and directories for the user project.
     3. Run pipeline on user project.
 
-## Notepadding
+# Notepadding
 
 For further information read all documentation available in `docs` folder.
 
-### Requirements - Linux text processing tool
+## Requirements - Linux text processing tool
 
 * grep
 * cut
@@ -77,7 +72,7 @@ For further information read all documentation available in `docs` folder.
 * sed
 * vim
 
-### Requirements - Specialized softwares
+## Requirements - Specialized softwares
 
 * [Open Babel 2.3.1](https://openbabel.org/docs/dev/Installation/install.html) or [2.4.0](https://sourceforge.net/projects/openbabel/files/openbabel/2.4.0/) - Open Babel
 
@@ -95,22 +90,22 @@ For further information read all documentation available in `docs` folder.
 
 * [PROPKA-3.1](https://github.com/jensengroup/propka-3.1.git) - PROPKA-3.1 GitHub
 
-#### FOR DFTB-FMO CALCULATIONS:
+### FOR DFTB-FMO CALCULATIONS:
 
 * [GAMESS](https://www.msg.chem.iastate.edu/GAMESS/download/register/) - Gordon Group page
 
 * [Facio FMOutil](http://zzzfelis.sakura.ne.jp/) - Facio page
 
-### The MHC Binding Interaction pipeline Manual
+## The MHC Binding Interaction pipeline Manual
 MHC BindingInteraction wiki (https://github.com/fidic-biomath/BindingInteraction/wiki)
 
-### Additional handling
+## Additional handling
 
 You can test the `MHCBI` pipeline by downloading and using the following [virtual machine](http://www.fidic.org.co/pagina/MHCBI.zip). 
 This virtual machine has an Ubuntu 20.04 installation having all the requirements needed for using the pipeline.
  
 
-## Referring to and citing the `MHCBI` pipeline
+# Referring to and citing the `MHCBI` pipeline
 
 Please cite the following reference in publications:
 
