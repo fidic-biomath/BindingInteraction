@@ -96,7 +96,7 @@ For further information read all documentation available in `docs` folder.
 
 * [PROPKA-3.1](https://github.com/jensengroup/propka-3.1.git) - PROPKA-3.1 GitHub
 
-    FOR DFTB-FMO CALCULATIONS:
+#### FOR DFTB-FMO CALCULATIONS:
 
 * [GAMESS](https://www.msg.chem.iastate.edu/GAMESS/download/register/) - Gordon Group page
 
