@@ -13,9 +13,13 @@ The `MHCBI` uses some programmes and does several tasks as detailed below:
      1. Dowser and DowserX software for putting water molecules into a protein structure.
      2. MOPAC software for several kinds of calculation using semi-empirical quantum methods (SQM), 
         such as optimisation geometries and single point energies, as in this methodology.
-     3. Dunbrack library on graphical interface Chimera software for substituting residues for others selected by the user.
+     3. Dunbrack library on graphical interface Chimera software for substituting residues 
+        for others selected by the user.
      4. PROPKA 3.1 for assigning charges to a protein structure.
-     5. GAMESS software for calculating binding energy using the Fragment Molecular Orbital method (FMO) at SQM DFTB3. Molecules must be fragmented prior to single point energy calculation, when the `MHCBI` uses GAMESS software. Such fragmentation is performed by a graphical user interface programme known as Facio; however, Facio is not controlled by `MHCBI` in script mode due to this program having a non-open-source licence.
+     5. GAMESS software for calculating binding energy using the Fragment Molecular Orbital method (FMO) at SQM DFTB3. 
+        Molecules must be fragmented prior to single point energy calculation, when the `MHCBI` uses GAMESS software. 
+        Such fragmentation is performed by a graphical user interface programme known as Facio; 
+        however, Facio is not controlled by `MHCBI` in script mode due to this program having a non-open-source licence.
 
 
 ## MHCBI 2.0.0
