@@ -56,7 +56,7 @@ The `MHCBI` pipeline is mostly written in Shell script and includes Python and T
 * [Chimera](https://www.cgl.ucsf.edu/chimera/download.html).
 
 * [PROPKA-3.1](https://github.com/jensengroup/propka-3.1.git).
-*
+
 #### FOR DFTB-FMO CALCULATIONS:
 
 * [GAMESS](https://www.msg.chem.iastate.edu/GAMESS/download/register/) - Gordon Group page
