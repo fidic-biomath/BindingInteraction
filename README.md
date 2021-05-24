@@ -94,24 +94,9 @@ the MHCBI asks about location when you are going to install the pipeline. If ans
     1. Paths for all the required external programs
     2. Test the pipeline
 
-3rd step: configure a work directory and run the pipeline
 
-    $ ./pre-run.sh
-
-  Complete all pre-run steps in order
-
-    1. Paths for the work and PDB structure.
-    2. Configure folders and directories for the user project.
-    3. Run pipeline on user project.
-
-# Notepadding
-
-For further information read all documentation available in `docs` folder.
-
-
-
-## The MHC Binding Interaction pipeline Manual
-MHC BindingInteraction wiki (https://github.com/fidic-biomath/BindingInteraction/wiki)
+## Running the MHC Binding Interaction pipeline
+See MHC BindingInteraction wiki (https://github.com/fidic-biomath/BindingInteraction/wiki)
 
 ## Additional handling
 
