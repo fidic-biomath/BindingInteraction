@@ -8,12 +8,18 @@ FILE2=pro_paths.out
 
 #First level
 
+echo
+echo "##################################"
+echo "  MHCBI scanning dirs and files..."
+echo "##################################"
+echo
+
 if [ -f "$FILE" ]; then
   MHCBI_PATH=$(grep "1 " ${FILE} | cut -d':' -f2)
-  PDB_PATH=$(grep "2 " ${FILE} | cut -d':' -f2)
-  PDB_NAME=$(grep "3 " ${FILE} | cut -d':' -f2)
-  WORK_PATH=$(grep "4 " ${FILE} | cut -d':' -f2)
-  WORK_NAME=$(grep "5 " ${FILE} | cut -d':' -f2)
+    PDB_PATH=$(grep "2 " ${FILE} | cut -d':' -f2)
+    PDB_NAME=$(grep "3 " ${FILE} | cut -d':' -f2)
+   WORK_PATH=$(grep "4 " ${FILE} | cut -d':' -f2)
+   WORK_NAME=$(grep "5 " ${FILE} | cut -d':' -f2)
   echo -e "Running paths source found.....................................\e[1;32m passed \e[0m"
 else
   echo "paths.out doesn't exist"
@@ -381,6 +387,7 @@ let subtotal2=$(grep "ABNORMALLY" */*/*/*.out | wc -l)
 # BINDING ENERGY RESULTS
 ###############################################################
 echo "###############################"  
+echo "        MOPAC SQM (PM7)        "
 echo "     BINDING ENERGY RESULTS    "
 echo "              for              "
 cd calculations/be_outputs
@@ -402,6 +409,7 @@ if [[ ${BE_OUTPUT_FILES} -ne 0 ]];then
       echo "$num_c complexes ($num_r receptors and $num_l ligands)"
     fi
     echo "###############################"
+    echo
     ##############################
 
     C_noW_ENERGY=$(awk '$1=="HEAT" && $2=="OF" && $3=="FORMATION" {print $5}' C_noW.arc)
@@ -435,10 +443,74 @@ else
   echo "MHCBI has any problem with the final MOPAC calculations."
   echo "Please, review any problem MHCBI had in the Stage 3."
 fi
-
-
 ##############
 cd ../..
+##############
+if [ -d "fmo-calculations" ];then
+  if [ -d "fmo-calculations/fmo_molecules" ];then
+    cd fmo-calculations/fmo_molecules
+    FMO_CALCULATIONS_FILES=$(ls | wc -l)
+    if [[ ${FMO_CALCULATIONS_FILES} -ne 0 ]];then
+      echo
+      echo "###############################"  
+      echo "   GAMESS SQM (FMO-DFT-B)      "
+      echo "   BINDING ENERGY RESULTS      "
+      echo "           for                 "
+
+      let num_c=$(ls C_*.log 2>&- | wc -l)
+      let num_r=$(ls R_*.log 2>&- | wc -l)
+      let num_l=$(ls L_*.log 2>&- | wc -l)
+ 
+      NUM_CALCS=$( echo "($num_c + $num_r + ${num_l})" | bc)
+      NUM_CALCS_EXPECTED=$( echo "(${MUT_NUM} + 1)*3" | bc)
+      #echo "NUM_CALCS=${NUM_CALCS} of NUM_CALCS_EXPECTED=${NUM_CALCS_EXPECTED}"
+      if [[ ${NUM_CALCS} -eq ${NUM_CALCS_EXPECTED} ]];then
+ 
+        if [[ ${MUT_NUM} -eq 0 ]];then
+          echo "$num_c complex ($num_r receptor and $num_l ligand)"
+        else
+          echo "$num_c complexes ($num_r receptors and $num_l ligands)"
+        fi
+        echo "###############################"
+        echo
+        ##############################
+ 
+        C_noW_ENERGY=$(awk '$1=="Free" && $2=="unco+D" && $3="energy" && $5="solvent=" {print $6}' C_noW.log)
+        L_noW_ENERGY=$(awk '$1=="Free" && $2=="unco+D" && $3="energy" && $5="solvent=" {print $6}' L_noW.log)
+        R_noW_ENERGY=$(awk '$1=="Free" && $2=="unco+D" && $3="energy" && $5="solvent=" {print $6}' R_noW.log)
+  
+        #echo "C_noW_ENERGY=${C_noW_ENERGY} kcal/mol L_noW_ENERGY=${L_noW_ENERGY} kcal/mol R_noW_ENERGY=${R_noW_ENERGY} kcal/mol"
+        CRL_BINDING_ENERGY=$( echo "${C_noW_ENERGY} - ${L_noW_ENERGY} - ${R_noW_ENERGY}" | bc )
+        echo "Complex binding energy = ${CRL_BINDING_ENERGY} kcal/mol"
+        if [[ ${MUT_NUM} -ne 0 ]];then
+ 
+          for i in $(awk '$1!="#"{print $1}' ../../mutations/listm.log)
+          do
+            C_ENERGY=$(awk '$1=="Free" && $2=="unco+D" && $3="energy" && $5="solvent=" {print $6}' C_${i}_2A.log)
+            L_ENERGY=$(awk '$1=="Free" && $2=="unco+D" && $3="energy" && $5="solvent=" {print $6}' L_${i}_2A.log)
+            R_ENERGY=$(awk '$1=="Free" && $2=="unco+D" && $3="energy" && $5="solvent=" {print $6}' R_${i}_2A.log)
+ 
+            #echo "C_ENERGY=${C_ENERGY} kcal/mol L_ENERGY=${L_ENERGY} kcal/mol R_ENERGY=${R_ENERGY} kcal/mol"
+            BINDING_ENERGY=$( echo "${C_ENERGY} - ${L_ENERGY} - ${R_ENERGY}" | bc )
+            echo "${i} Complex binding energy = ${BINDING_ENERGY} kcal/mol"
+          done
+        fi
+
+      else
+        echo "NUM_CALCS=${NUM_CALCS} of NUM_CALCS_EXPECTED=${NUM_CALCS_EXPECTED}"
+        echo "You don't have the expected number of files in fmo-calculations/fmo_molecules"
+      fi
+
+    else
+      echo "You don't have any file in fmo-calculations/fmo_molecules"
+    fi 
+  else
+    echo "The fmo-calculations/fmo_molecules don't exist..."
+  fi
+else
+  echo
+  echo "There are not GAMESS calculations..."
+fi
 ##############
 echo
 echo "Resume finished"
