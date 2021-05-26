@@ -50,18 +50,18 @@ mkdir -p source
 cd source/
 cp ../../source/addH.sh .
 cp ../../source/arc_to_pdb.sh .
-cp ../../source/checkst.sh .
+#cp ../../source/checkst.sh .
 cp ../../source/del_waters.sh .
 cp ../../source/dowser_beta.tcl .
 cp ../../source/dowser_loops_script.sh .
 cp ../../source/dowser.tcl .
 cp ../../source/prepare_st1.tcl .
 cp ../../source/prepare_st2.tcl .
-cp ../../source/script_addH_tooptH.sh .
+#cp ../../source/script_addH_tooptH.sh .
 cp ../../source/script_cleaning_dow.sh .
-cp ../../source/script_clean_O.sh .
+#cp ../../source/script_clean_O.sh .
 cp ../../source/script_dow_to_mopac.sh .
-cp ../../source/script_optH_to_optall.sh .
+#cp ../../source/script_optH_to_optall.sh .
 
 #Stage 2
 cd ../../mutations/
@@ -81,9 +81,9 @@ cp ../source/script_res_charges.sh .
 cd ../calculations/
 cp ../${FILE2} .
 cp ../source/exec_pka.sh .
-cp ../source/exec_test.sh .
+#cp ../source/exec_test.sh .
 cp ../source/org_calc.sh .
-cp ../source/script_arc_auxmop.sh .
+#cp ../source/script_arc_auxmop.sh .
 cp ../source/script_arc_to_pdb.sh .
 cp ../source/script_arc_to_pdb_s.sh .
 cp ../source/script_build_spmop.sh .
@@ -91,7 +91,7 @@ cp ../source/script_check_ch.sh .
 cp ../source/script_fishing_pka.sh .
 cp ../source/script_H_charges.sh .
 cp ../source/script_let.sh .
-cp ../source/script_other_sp.sh .
+#cp ../source/script_other_sp.sh .
 
 
 echo "****** MHCBI says: ******"
