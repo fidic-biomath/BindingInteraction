@@ -118,12 +118,6 @@ PH=7  # pH value to estimate the protonation state in script_fishing_pka.sh
 ./run_mhcbi.sh ${PH} ${MUT_NUM}
 ####################################
 
-#echo " "
-#echo "****Checking test..."
-#echo " "
-#./tester.sh
-#echo "    "
-
 #########################################
 echo "For FMO test is not necessary to have installed GUI Facio"
 echo "In test folder there are two aditional folders containing FMO input GAMESS (si_short and si_straight) aiming to facilitate a complete test"
@@ -140,6 +134,7 @@ do
     count=1
   elif [ "$answer" == "no" ] || [ "$answer" == "n" ]; then
     echo "Ending test..."
+    ./tester.sh
     exit 1;
   else
     echo "Please enter again your answer - yes (y) or no (n)"
@@ -179,6 +174,7 @@ chmod +x run_mhcbifmo.sh
 ##########################################
 #
 ./run_mhcbifmo.sh
+./tester.sh ${WORK_NAME}
 ##########################################
 rm -f run_mhcbifmo.sh
 

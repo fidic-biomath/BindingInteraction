@@ -5,6 +5,7 @@
 
 FILE=paths.out
 FILE2=pro_paths.out
+TEST_WORK_NAME=$1
 
 #First level
 
@@ -418,7 +419,7 @@ if [[ ${BE_OUTPUT_FILES} -ne 0 ]];then
 
     #echo "C_noW_ENERGY=${C_noW_ENERGY} kcal/mol L_noW_ENERGY=${L_noW_ENERGY} kcal/mol R_noW_ENERGY=${R_noW_ENERGY} kcal/mol"
     CRL_BINDING_ENERGY=$( echo "${C_noW_ENERGY} - ${L_noW_ENERGY} - ${R_noW_ENERGY}" | bc )
-    echo "Complex binding energy = ${CRL_BINDING_ENERGY} kcal/mol"
+    echo "    Complex binding energy = ${CRL_BINDING_ENERGY} kcal/mol"
     if [[ ${MUT_NUM} -ne 0 ]];then
 
       for i in $(awk '$1!="#"{print $1}' ../../mutations/listm.log)
@@ -431,6 +432,25 @@ if [[ ${BE_OUTPUT_FILES} -ne 0 ]];then
         BINDING_ENERGY=$( echo "${C_ENERGY} - ${L_ENERGY} - ${R_ENERGY}" | bc )
         echo "${i} Complex binding energy = ${BINDING_ENERGY} kcal/mol"
       done
+    fi
+    # FOR tester.sh on test evaluation
+    if [ ! -z "${TEST_WORK_NAME}" ];then
+      if [ "${TEST_WORK_NAME}" = "1bx2shortened" ];then
+        echo 
+        echo "EXPECTED VALUES..."
+        echo "    Complex binding energy = 56.34946 kcal/mol"
+        echo "P02 Complex binding energy = 59.25591 kcal/mol"
+        echo "P06 Complex binding energy = 63.41482 kcal/mol"
+        echo
+      fi
+      if [ "${TEST_WORK_NAME}" = "3oxsstraight" ];then
+         echo 
+         echo "EXPECTED VALUES..."
+         echo "    Complex binding energy = ???????? kcal/mol"
+         echo "P02 Complex binding energy = ???????? kcal/mol"
+         echo "P06 Complex binding energy = ???????? kcal/mol"
+         echo 
+      fi
     fi
   else
     echo "NUM_CALCS=${NUM_CALCS} of NUM_CALCS_EXPECTED=${NUM_CALCS_EXPECTED}"
@@ -481,7 +501,7 @@ if [ -d "fmo-calculations" ];then
   
         #echo "C_noW_ENERGY=${C_noW_ENERGY} kcal/mol L_noW_ENERGY=${L_noW_ENERGY} kcal/mol R_noW_ENERGY=${R_noW_ENERGY} kcal/mol"
         CRL_BINDING_ENERGY=$( echo "${C_noW_ENERGY} - ${L_noW_ENERGY} - ${R_noW_ENERGY}" | bc )
-        echo "Complex binding energy = ${CRL_BINDING_ENERGY} kcal/mol"
+        echo "    Complex binding energy = ${CRL_BINDING_ENERGY} kcal/mol"
         if [[ ${MUT_NUM} -ne 0 ]];then
  
           for i in $(awk '$1!="#"{print $1}' ../../mutations/listm.log)
@@ -494,6 +514,25 @@ if [ -d "fmo-calculations" ];then
             BINDING_ENERGY=$( echo "${C_ENERGY} - ${L_ENERGY} - ${R_ENERGY}" | bc )
             echo "${i} Complex binding energy = ${BINDING_ENERGY} kcal/mol"
           done
+        fi
+        # FOR tester.sh on test evaluation
+        if [ ! -z "${TEST_WORK_NAME}" ];then
+          if [ "${TEST_WORK_NAME}" = "1bx2shortened" ];then
+            echo 
+            echo "EXPECTED VALUES..."
+            echo "    Complex binding energy = -.333481843 kcal/mol"
+            echo "P02 Complex binding energy = -.325955749 kcal/mol"
+            echo "P06 Complex binding energy = -.303522621 kcal/mol"
+            echo
+          fi
+          if [ "${TEST_WORK_NAME}" = "3oxsstraight" ];then
+            echo 
+            echo "EXPECTED VALUES..."
+            echo "    Complex binding energy = ???????? kcal/mol"
+            echo "P02 Complex binding energy = ???????? kcal/mol"
+            echo "P06 Complex binding energy = ???????? kcal/mol"
+            echo 
+          fi
         fi
 
       else
