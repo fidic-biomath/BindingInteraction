@@ -83,7 +83,7 @@ cp ../${FILE2} .
 cp ../source/exec_pka.sh .
 #cp ../source/exec_test.sh .
 cp ../source/org_calc.sh .
-#cp ../source/script_arc_auxmop.sh .
+cp ../source/script_arc_auxmop.sh .
 cp ../source/script_arc_to_pdb.sh .
 cp ../source/script_arc_to_pdb_s.sh .
 cp ../source/script_build_spmop.sh .
@@ -91,7 +91,7 @@ cp ../source/script_check_ch.sh .
 cp ../source/script_fishing_pka.sh .
 cp ../source/script_H_charges.sh .
 cp ../source/script_let.sh .
-#cp ../source/script_other_sp.sh .
+cp ../source/script_other_sp.sh .
 
 
 echo "****** MHCBI says: ******"
