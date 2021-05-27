@@ -61,7 +61,7 @@ cp ../../source/script_addH_tooptH.sh .
 cp ../../source/script_cleaning_dow.sh .
 #cp ../../source/script_clean_O.sh .
 cp ../../source/script_dow_to_mopac.sh .
-#cp ../../source/script_optH_to_optall.sh .
+cp ../../source/script_optH_to_optall.sh .
 
 #Stage 2
 cd ../../mutations/
