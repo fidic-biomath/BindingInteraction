@@ -438,9 +438,9 @@ if [[ ${BE_OUTPUT_FILES} -ne 0 ]];then
       if [ "${TEST_WORK_NAME}" = "1bx2shortened" ];then
         echo 
         echo "EXPECTED VALUES..."
-        echo "    Complex binding energy = 56.34946 kcal/mol"
-        echo "P02 Complex binding energy = 59.25591 kcal/mol"
-        echo "P06 Complex binding energy = 63.41482 kcal/mol"
+        echo "    Complex binding energy = -56.34946 kcal/mol"
+        echo "P02 Complex binding energy = -59.25591 kcal/mol"
+        echo "P06 Complex binding energy = -63.41482 kcal/mol"
         echo
       fi
       if [ "${TEST_WORK_NAME}" = "3oxsstraight" ];then
