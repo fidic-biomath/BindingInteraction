@@ -57,7 +57,7 @@ cp ../../source/dowser_loops_script.sh .
 cp ../../source/dowser.tcl .
 cp ../../source/prepare_st1.tcl .
 cp ../../source/prepare_st2.tcl .
-#cp ../../source/script_addH_tooptH.sh .
+cp ../../source/script_addH_tooptH.sh .
 cp ../../source/script_cleaning_dow.sh .
 #cp ../../source/script_clean_O.sh .
 cp ../../source/script_dow_to_mopac.sh .
