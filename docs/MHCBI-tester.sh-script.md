@@ -1,14 +1,12 @@
 At the end of running pipeline, you can execute `tester.sh` script to obtain a summary information about the all calculations.
 
-Below is an example of the script output for `1bx2shortened` test (for run this test, you ...)
-
+Below is an example of the script output for `1bx2shortened` test:
 ```
+
 ##################################
   MHCBI scanning dirs and files...
 ##################################
 
-cut: the delimiter must be a single character
-Try 'cut --help' for more information.
 Running paths source found..................................... passed 
 External program paths source found............................ passed 
 1st Stage directory folder
@@ -74,15 +72,26 @@ Total MOPAC results passed ...  19 of 19
 Total MOPAC results failed ...  0 of 19 
 
 ###############################
-           MOPAC SQM           
+        MOPAC SQM (PM7)        
      BINDING ENERGY RESULTS    
               for              
 3 complexes (3 receptors and 3 ligands)
 ###############################
 
-Complex binding energy = 56.34946 kcal/mol
-P02 Complex binding energy = 59.25591 kcal/mol
-P06 Complex binding energy = 63.41482 kcal/mol
+    Complex binding energy = -56.99344 kcal/mol
+P02 Complex binding energy = -51.69986 kcal/mol
+P06 Complex binding energy = -33.75998 kcal/mol
+
+###############################
+   GAMESS SQM (FMO-DFT-B)      
+   BINDING ENERGY RESULTS      
+           for                 
+3 complexes (3 receptors and 3 ligands)
+###############################
+
+    Complex binding energy = -.333481843 kcal/mol
+P02 Complex binding energy = -.325955749 kcal/mol
+P06 Complex binding energy = -.303522621 kcal/mol
 
 Resume finished
 ```

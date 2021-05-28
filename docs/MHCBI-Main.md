@@ -65,14 +65,27 @@ HEAT OF FORMATION = (energy value in Kcal/mol)
 ```
 Such energy will be used by the user for computing **binding energies** (BE).
 
-The optional procedure is part of the **Fourth step** and uses the `final_pdbs` folder as input for creating input for GAMESS computations. This step depends on user supervision due to the GUI Facio environment. You must put your GAMESS inputs in the same place as PDB structures. After executing GAMESS you can extract the energies from the output file (`.log` file) by looking for (at the end of the file):
+The optional procedure is part of the **Fourth step** and uses the `final_pdbs` folder as input for creating input for GAMESS computations. 
+
+You must put your GAMESS inputs in the same place as PDB structures. 
+
+Go to fmo-calculations/input_pdbs/ path, in that directory there are all complex, receptor and ligand PDB structures from substitutions set. 
+
+Use GUI Facio to convert them into FMO GAMESS inputs.
+
+This step depends on user supervision due to the GUI Facio environment.
+
+After executing GAMESS you can extract the energies from the output file (`.log` file) by looking for (at the end of the file):
+
 ```
 The first energy printed below is the best in FMO/PCM
 ```
 ```
-Free unco+D energy in solvent=` (energy value in hartree)
+Free unco+D energy in solvent= (energy value in hartree)
 ```
 Such energy will be used by the user for computing **BE**.
+
+For more information on how to perform the FMO calculation, please check the [example](https://github.com/fidic-biomath/BindingInteraction/wiki/MHCBI:-FMO-calculations).
 
 Additional information about the methods could be consulted here: [FMO-GAMES](http://myweb.liu.edu/~nmatsuna/gamess/input/FMO.html) and [FACIO](https://www.yumpu.com/en/document/read/44787615/facio-ver-1642-manual-thank-you-very-much-for-). 
 
