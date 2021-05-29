@@ -528,9 +528,9 @@ if [ -d "fmo-calculations" ];then
           if [ "${TEST_WORK_NAME}" = "3oxsstraight" ];then
             echo 
             echo "EXPECTED VALUES..."
-            echo "    Complex binding energy = ???????? kcal/mol"
-            echo "P02 Complex binding energy = ???????? kcal/mol"
-            echo "P06 Complex binding energy = ???????? kcal/mol"
+            echo "    Complex binding energy = .008765652 kcal/mol"
+            echo "P02 Complex binding energy = .046381190 kcal/mol"
+            echo "P06 Complex binding energy = .017071172 kcal/mol"
             echo 
           fi
         fi
